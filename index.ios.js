@@ -1,33 +1,53 @@
-import React, {
-        AppRegistry,
-        Component,
-        StyleSheet,
-        Text,
-        View,
-        WebView,
-        } from'react-native';
-var DEFAULT_URL = 'http://www.lcode.org';
+/**
+ * Sample React Native App
+ * https://github.com/facebook/react-native
+ * @flow
+ */
 
-var WebViewDemo =React.createClass({
-  render: function() {
+import React, { Component } from 'react';
+import {
+  AppRegistry,
+  StyleSheet,
+  Text,
+  View
+} from 'react-native';
+
+export default class MyProject extends Component {
+  render() {
     return (
-            <View style={{flex:1}}>
-              <Text style={{height:40}}>简单的网页显示</Text>
-              <WebView style={styles.webview_style}
-                      url={DEFAULT_URL}
-                      startInLoadingState={true}
-                      domStorageEnabled={true}
-                      javaScriptEnabled={true}
-                      >
-              </WebView>
-            </View>
+      <View style={styles.container}>
+        <Text style={styles.welcome}>
+          Welcome to React Native!
+        </Text>
+        <Text style={styles.instructions}>
+          To get started, edit index.ios.js
+        </Text>
+        <Text style={styles.instructions}>
+          Press Cmd+R to reload,{'\n'}
+          Cmd+D or shake for dev menu
+        </Text>
+      </View>
     );
+  }
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#F5FCFF',
+  },
+  welcome: {
+    fontSize: 20,
+    textAlign: 'center',
+    margin: 10,
+  },
+  instructions: {
+    textAlign: 'center',
+    color: '#333333',
+    marginBottom: 5,
   },
 });
-var styles =StyleSheet.create({
-  webview_style:{
-    backgroundColor:'#00ff00',
-  }
-});
 
-AppRegistry.registerComponent('MyProject',() => WebViewDemo);
+AppRegistry.registerComponent('MyProject', () => MyProject);
