@@ -93,4 +93,4 @@ const styles = StyleSheet.create({
 
 
 AppRegistry.registerComponent(
-        'toilet', () => App);
+        'MyProject', () => App);
